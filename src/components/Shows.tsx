@@ -21,18 +21,18 @@ const Shows = () => {
   ]
 
   return (
-    <section id="shows" className="py-20 bg-white">
+    <section id="shows" className="py-20 bg-dark-bg">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-warm-brown">Our Shows</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center gradient-text-primary">Our Shows</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {shows.map((show) => (
-            <div key={show.id} className="rounded-lg overflow-hidden shadow-lg border-2 border-warm-orange">
+            <div key={show.id} className="rounded-lg overflow-hidden shadow-lg border-2 border-spotlight bg-dark-surface">
               <img src={show.image} alt={show.title} className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h3 className="text-2xl font-semibold mb-2 text-warm-brown">{show.title}</h3>
-                <p className="mb-2 text-warm-brown">Date: {show.date}</p>
-                <p className="mb-4 text-gray-600">{show.abstract}</p>
-                <p className="capitalize font-semibold text-warm-red">{show.status}</p>
+                <h3 className="text-2xl font-semibold mb-2 gradient-text-secondary">{show.title}</h3>
+                <p className="mb-2 text-text-primary">Date: {show.date}</p>
+                <p className="mb-4 text-text-secondary">{show.abstract}</p>
+                <p className="capitalize font-semibold text-spotlight">{show.status}</p>
               </div>
             </div>
           ))}

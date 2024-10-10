@@ -30,9 +30,9 @@ const Gallery = () => {
   }
 
   return (
-    <section id="gallery" className="py-20 bg-warm-yellow">
+    <section id="gallery" className="py-20 bg-dark-bg">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-warm-brown">Gallery</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center gradient-text-primary">Gallery</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((item, index) => (
             <div 
@@ -41,8 +41,8 @@ const Gallery = () => {
               onClick={() => openSlideshow(index)}
             >
               <img src={item.url} alt={`Gallery item ${item.id}`} className="w-full h-64 object-cover" />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <span className="text-white text-lg font-semibold">View Larger</span>
+              <div className="absolute inset-0 bg-dark-bg bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <span className="text-spotlight text-lg font-semibold">View Larger</span>
               </div>
             </div>
           ))}
@@ -50,7 +50,7 @@ const Gallery = () => {
       </div>
 
       {selectedImage !== null && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-dark-bg bg-opacity-75 flex items-center justify-center z-50">
           <div className="relative max-w-4xl w-full">
             <img 
               src={images[selectedImage].url} 
@@ -59,19 +59,19 @@ const Gallery = () => {
             />
             <button 
               onClick={closeSlideshow}
-              className="absolute top-4 right-4 text-white hover:text-warm-red transition-colors duration-300"
+              className="absolute top-4 right-4 text-spotlight hover:text-curtain-red transition-colors duration-300"
             >
               <X size={24} />
             </button>
             <button 
               onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-warm-red transition-colors duration-300"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-spotlight hover:text-curtain-red transition-colors duration-300"
             >
               &lt;
             </button>
             <button 
               onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-warm-red transition-colors duration-300"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-spotlight hover:text-curtain-red transition-colors duration-300"
             >
               &gt;
             </button>

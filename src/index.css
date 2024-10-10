@@ -6,8 +6,22 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  background-color: theme('colors.dark-bg');
+  color: theme('colors.text-primary');
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
+}
+
+.gradient-text-primary {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-secondary {
+  background: linear-gradient(45deg, #FF6347, #FF4500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

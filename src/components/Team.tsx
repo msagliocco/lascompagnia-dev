@@ -9,15 +9,15 @@ const Team = () => {
   ]
 
   return (
-    <section id="team" className="py-20 bg-warm-orange">
+    <section id="team" className="py-20 bg-dark-surface">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center text-white">Our Team</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center gradient-text-secondary">Our Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {members.map((member) => (
-            <div key={member.id} className="bg-white p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
+            <div key={member.id} className="bg-dark-bg p-6 rounded-lg shadow-md text-center transform hover:scale-105 transition duration-300">
               <img src={member.image} alt={member.name} className="w-32 h-32 rounded-full mx-auto mb-4 object-cover" />
-              <h3 className="text-xl font-semibold mb-2 text-warm-brown">{member.name}</h3>
-              <p className="text-warm-red">{member.role}</p>
+              <h3 className="text-xl font-semibold mb-2 gradient-text-primary">{member.name}</h3>
+              <p className="text-spotlight">{member.role}</p>
             </div>
           ))}
         </div>
