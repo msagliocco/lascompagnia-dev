@@ -7,7 +7,7 @@ const Shows = () => {
       title: "La Tesi di Ernesto",
       date: "2024-07-15",
       status: "upcoming",
-      image: "https://source.unsplash.com/800x600/?thesis,student",
+      image: "https://picsum.photos/seed/thesis/800/600",
       abstract: "A hilarious comedy about a student's desperate attempt to complete his thesis while navigating through absurd academic obstacles."
     },
     {
@@ -15,7 +15,7 @@ const Shows = () => {
       title: "Il Dio del Massacro",
       date: "2024-09-01",
       status: "upcoming",
-      image: "https://source.unsplash.com/800x600/?argument,conflict",
+      image: "https://picsum.photos/seed/conflict/800/600",
       abstract: "A gripping drama that explores the thin veneer of civility as two couples meet to discuss a playground altercation between their children."
     },
   ]

@@ -2,10 +2,10 @@ import React from 'react'
 
 const Team = () => {
   const members = [
-    { id: 1, name: "Maria Rossi", role: "Director", image: "https://source.unsplash.com/400x400/?woman,director" },
-    { id: 2, name: "Luca Bianchi", role: "Lead Actor", image: "https://source.unsplash.com/400x400/?man,actor" },
-    { id: 3, name: "Giulia Verdi", role: "Lead Actress", image: "https://source.unsplash.com/400x400/?woman,actress" },
-    { id: 4, name: "Marco Neri", role: "Set Designer", image: "https://source.unsplash.com/400x400/?man,designer" },
+    { id: 1, name: "Maria Rossi", role: "Director", image: "https://picsum.photos/seed/director/400/400" },
+    { id: 2, name: "Luca Bianchi", role: "Lead Actor", image: "https://picsum.photos/seed/actor/400/400" },
+    { id: 3, name: "Giulia Verdi", role: "Lead Actress", image: "https://picsum.photos/seed/actress/400/400" },
+    { id: 4, name: "Marco Neri", role: "Set Designer", image: "https://picsum.photos/seed/designer/400/400" },
   ]
 
   return (

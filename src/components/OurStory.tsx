@@ -10,7 +10,7 @@ const OurStory = () => {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
             <img
-              src="https://source.unsplash.com/800x600/?theater,stage"
+              src="https://picsum.photos/seed/theater/800/600"
               alt="LaCompagnia Theater"
               className="rounded-lg shadow-lg"
             />
