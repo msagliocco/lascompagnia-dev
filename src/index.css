@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  background-color: theme('colors.dark-bg');
+  background-color: theme('colors.rich-black');
   color: theme('colors.text-primary');
 }
 
@@ -14,14 +14,111 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
 }
 
-.gradient-text-primary {
-  background: linear-gradient(45deg, #FFD700, #FFA500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.heading-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-selective-yellow to-engineering-orange font-extrabold;
 }
 
-.gradient-text-secondary {
-  background: linear-gradient(45deg, #FF6347, #FF4500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.ball {
+  --delay: 0s;
+  --size: 0.4;
+  --speed: 20s;
+  
+  aspect-ratio: 1;
+  width: calc(150% * var(--size));
+  
+  background: linear-gradient(259.53deg, #ffba08 6.53%, #d00000 95.34%);
+  filter: blur(10vw);
+  
+  border-radius: 50%;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  animation: loop var(--speed) infinite linear;
+  animation-delay: var(--delay);
+  transform-origin: 50% 50%;
+  
+  opacity: 0.3;
+}
+
+@keyframes loop {
+  0% { transform: translate3D(0%, 51%, 0) rotate(0deg); }
+  5% { transform: translate3D(8%, 31%, 0) rotate(18deg); }
+  10% { transform: translate3D(22%, 13%, 0) rotate(36deg); }
+  15% { transform: translate3D(40%, 2%, 0) rotate(54deg); }
+  20% { transform: translate3D(46%, 21%, 0) rotate(72deg); }
+  25% { transform: translate3D(50%, 47%, 0) rotate(90deg); }
+  30% { transform: translate3D(53%, 80%, 0) rotate(108deg); }
+  35% { transform: translate3D(59%, 98%, 0) rotate(125deg); }
+  40% { transform: translate3D(84%, 89%, 0) rotate(144deg); }
+  45% { transform: translate3D(92%, 68%, 0) rotate(162deg); }
+  50% { transform: translate3D(99%, 47%, 0) rotate(180deg); }
+  55% { transform: translate3D(97%, 21%, 0) rotate(198deg); }
+  60% { transform: translate3D(80%, 7%, 0) rotate(216deg); }
+  65% { transform: translate3D(68%, 25%, 0) rotate(234deg); }
+  70% { transform: translate3D(59%, 41%, 0) rotate(251deg); }
+  75% { transform: translate3D(50%, 63%, 0) rotate(270deg); }
+  80% { transform: translate3D(38%, 78%, 0) rotate(288deg); }
+  85% { transform: translate3D(21%, 92%, 0) rotate(306deg); }
+  90% { transform: translate3D(3%, 79%, 0) rotate(324deg); }
+  100% { transform: translate3D(0%, 51%, 0) rotate(360deg); }
+}
+
+.glow-container {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.section-bg {
+  background-color: rgba(3, 7, 30, 0.7);
+}
+
+.section-bg-light {
+  background-color: rgba(3, 7, 30, 0.5);
+}
+
+.glow-button {
+  background: linear-gradient(45deg, #ffba08, #d00000);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.glow-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffba08, #d00000, #ffba08);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-button:hover::before {
+  opacity: 1;
+}
+
+.glow-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 186, 8, 0.4);
+}
+
+.glow-button:active {
+  transform: translateY(0);
 }

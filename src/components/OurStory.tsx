@@ -2,15 +2,15 @@ import React from 'react';
 
 const OurStory = () => {
   return (
-    <section id="about" className="py-20 bg-dark-surface">
+    <section id="about" className="py-20 section-bg">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 text-center gradient-text-secondary">
+        <h2 className="text-4xl font-bold mb-8 text-center heading-gradient">
           Our Story
         </h2>
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
             <img
-              src="https://source.unsplash.com/800x600/?theater,stage"
+              src="https://picsum.photos/seed/theater/800/600"
               alt="LaCompagnia Theater"
               className="rounded-lg shadow-lg"
             />

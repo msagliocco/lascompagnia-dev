@@ -8,6 +8,7 @@ import Booking from './components/Booking';
 import Gallery from './components/Gallery';
 import CookieConsent from './components/CookieConsent';
 import OurStory from './components/OurStory';
+import GlowBackground from './components/GlowBackground';
 
 function App() {
   const [showCookieConsent, setShowCookieConsent] = useState(false);
@@ -25,9 +26,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
+    <div className="min-h-screen flex flex-col relative overflow-hidden bg-dark-bg text-text-primary">
+      <GlowBackground />
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10 pt-16">
         <Home />
         <OurStory />
         <Shows />
