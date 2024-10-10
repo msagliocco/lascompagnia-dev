@@ -1,16 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TheaterIcon, Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="bg-chocolate-cosmos text-text-primary p-4 sticky top-0 z-50">
-      <div className="container mx-auto flex justify-between items-center">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-chocolate-cosmos/90 backdrop-blur-sm' : 'bg-transparent'}`}>
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <TheaterIcon className="mr-2 text-selective-yellow" />
           <h1 className="text-2xl font-bold heading-gradient">La Scompagnia</h1>
@@ -72,8 +82,8 @@ const Header = () => {
         </button>
       </div>
       {isMenuOpen && (
-        <nav className="md:hidden mt-4">
-          <ul className="flex flex-col space-y-2">
+        <nav className="md:hidden mt-4 bg-chocolate-cosmos/90 backdrop-blur-sm">
+          <ul className="flex flex-col space-y-2 px-4 py-2">
             <li>
               <a
                 href="#home"

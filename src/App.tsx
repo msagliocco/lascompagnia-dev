@@ -29,7 +29,7 @@ function App() {
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-dark-bg text-text-primary">
       <GlowBackground />
       <Header />
-      <main className="flex-grow relative z-10">
+      <main className="flex-grow relative z-10 pt-16">
         <Home />
         <OurStory />
         <Shows />

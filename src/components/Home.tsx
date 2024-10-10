@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <section id="home" className="py-20 section-bg-light">
+    <section id="home" className="py-20 section-bg-light backdrop-blur-sm">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 heading-gradient">
           Benvenuti nel sito de La Scompagnia
