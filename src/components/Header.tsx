@@ -19,11 +19,21 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-chocolate-cosmos/90 backdrop-blur-sm' : 'bg-transparent'}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-chocolate-cosmos/90 backdrop-blur-sm'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <TheaterIcon className="mr-2 text-selective-yellow" />
-          <h1 className="text-2xl font-bold heading-gradient">La Scompagnia</h1>
+          <img
+            src="images/La Scompagnia logo mennekenbe small.png"
+            alt=" "
+            className="h-10 mr-2" // Adjust height as needed
+          />
+          <h1 className="text-2xl font-bold ">La Scompagnia</h1>
         </div>
         <nav className="hidden md:block">
           <ul className="flex space-x-6">
@@ -77,7 +87,10 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <button className="md:hidden text-selective-yellow" onClick={toggleMenu}>
+        <button
+          className="md:hidden text-selective-yellow"
+          onClick={toggleMenu}
+        >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
