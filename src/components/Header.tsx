@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
           ? 'bg-chocolate-cosmos/90 backdrop-blur-sm'
           : 'bg-transparent'
@@ -29,7 +29,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <img
-            src="images/La Scompagnia logo mennekenbe small.png"
+            src="images/La_Scompagnia_logo_mennekenbe_small.png"
             alt=" "
             className="h-10 mr-2" // Adjust height as needed
           />

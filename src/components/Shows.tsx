@@ -64,7 +64,7 @@ const Shows = () => {
                   </p>
                   {show.status === 'upcoming' && (
                     <a href="#booking" className="glow-button text-sm">
-                      Book Now
+                      Prenota ora!
                     </a>
                   )}
                 </div>
