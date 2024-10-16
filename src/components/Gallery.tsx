@@ -1,99 +1,143 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { X, ChevronLeft, ChevronRight } from 'lucide-react'
+import React from 'react';
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null)
-
   const images = [
-    { id: 1, type: 'photo', url: 'https://picsum.photos/seed/theater1/800/600' },
-    { id: 2, type: 'photo', url: 'https://picsum.photos/seed/acting1/800/600' },
-    { id: 3, type: 'photo', url: 'https://picsum.photos/seed/drama1/800/600' },
-    { id: 4, type: 'photo', url: 'https://picsum.photos/seed/audience1/800/600' },
-    { id: 5, type: 'photo', url: 'https://picsum.photos/seed/stage1/800/600' },
-    { id: 6, type: 'photo', url: 'https://picsum.photos/seed/rehearsal1/800/600' },
-  ]
-
-  const openSlideshow = (index: number) => {
-    setSelectedImage(index)
-  }
-
-  const closeSlideshow = useCallback(() => {
-    setSelectedImage(null)
-  }, [])
-
-  const nextImage = () => {
-    setSelectedImage((prev) => (prev === null ? null : (prev + 1) % images.length))
-  }
-
-  const prevImage = () => {
-    setSelectedImage((prev) => (prev === null ? null : (prev - 1 + images.length) % images.length))
-  }
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        closeSlideshow()
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyDown)
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [closeSlideshow])
+    { id: 1, url: 'images/gallery/La Tesi di Ernesto collage La Scompagnia.jpg' },
+    { id: 2, url: 'images/gallery/77328431_134499161301190_8024187601256710144_n.jpg' },
+    { id: 3, url: 'images/gallery/79003044_134499571301149_8659359551474106368_n.jpg' },
+    { id: 4, url: 'images/gallery/79449961_135515351199571_3332786667693015040_n.jpg' },
+    { id: 5, url: 'images/gallery/79692414_137400397677733_902456492421021696_n (1).jpg' },
+    { id: 6, url: 'images/gallery/80002972_137699140981192_1167939755405475840_n.jpg' },
+    { id: 7, url: 'images/gallery/83945786_163643595053413_3500340535980195840_n.jpg' },
+    { id: 8, url: 'images/gallery/IMG-20191208-WA0092.jpg' },
+    { id: 9, url: 'images/gallery/IMG-20191208-WA0052.jpg' },
+    { id: 10, url: 'images/gallery/IMG-20191208-WA0026.jpg' },
+    { id: 11, url: 'images/gallery/IMG-20191208-WA0055.jpg' },
+    { id: 11, url: 'images/gallery/IMG-20191208-WA0022.jpg' },
+  ];
 
   return (
     <section id="gallery" className="py-20 section-bg">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center heading-gradient">Gallery</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((item, index) => (
-            <div 
-              key={item.id} 
-              className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition duration-300"
-              onClick={() => openSlideshow(index)}
-            >
-              <img src={item.url} alt={`Gallery item ${item.id}`} className="w-full h-64 object-cover" />
-              <div className="absolute inset-0 bg-rich-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <span className="text-selective-yellow text-lg font-semibold">View Larger</span>
-              </div>
+        <h2 className="text-4xl font-bold mb-12 text-center heading-gradient">
+          Galleria
+        </h2>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="grid gap-4">
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[0].url}
+                alt="gallery-photo"
+              />
             </div>
-          ))}
-        </div>
-      </div>
-
-      {selectedImage !== null && (
-        <div className="fixed inset-0 bg-rich-black bg-opacity-90 flex items-center justify-center z-50">
-          <div className="relative max-w-4xl w-full">
-            <img 
-              src={images[selectedImage].url} 
-              alt={`Slideshow image ${selectedImage + 1}`} 
-              className="w-full h-auto"
-            />
-            <button 
-              onClick={closeSlideshow}
-              className="absolute top-4 right-4 text-selective-yellow hover:text-engineering-orange transition-colors duration-300 bg-rich-black bg-opacity-50 p-2 rounded-full"
-            >
-              <X size={24} />
-            </button>
-            <button 
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-selective-yellow hover:text-engineering-orange transition-colors duration-300 bg-rich-black bg-opacity-50 p-2 rounded-full"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-selective-yellow hover:text-engineering-orange transition-colors duration-300 bg-rich-black bg-opacity-50 p-2 rounded-full"
-            >
-              <ChevronRight size={24} />
-            </button>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[1].url}
+                alt="gallery-photo"
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[2].url}
+                alt="gallery-photo"
+              />
+            </div>
+          </div>
+          <div className="grid gap-4">
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[3].url}
+                alt="gallery-photo"
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[4].url}
+                alt="gallery-photo"
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[5].url}
+                alt="gallery-photo"
+              />
+            </div>
+          </div>
+          <div className="grid gap-4">
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[6].url}
+                alt="gallery-photo"
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[7].url}
+                alt="gallery-photo"
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[8].url}
+                alt="gallery-photo"
+              />
+            </div>
+          </div>
+          <div className="grid gap-4">
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[9].url}
+                alt="gallery-photo"
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[10].url}
+                alt="gallery-photo"
+              />
+            </div>
+            <div>
+              <img
+                className="h-auto max-w-full rounded-lg object-cover object-center"
+                src={images[11].url}
+                alt="gallery-photo"
+              />
+            </div>
+            
+            
           </div>
         </div>
-      )}
-    </section>
-  )
-}
 
-export default Gallery
+
+        <div className="mt-16">
+          <h3 className="text-3xl font-bold mb-8 text-center heading-gradient">
+            Video in evidenza
+          </h3>
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/qWC4zvh1T5c?si=Z4TxVZzNiq76D8dh"
+              title="La Tesi di Ernesto - La Scompagnia - Video in evidenza"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Gallery;

@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 interface CookieConsentProps {
-  onConsent: (accepted: boolean) => void
+  onConsent: (accepted: boolean) => void;
 }
 
 const CookieConsent: React.FC<CookieConsentProps> = ({ onConsent }) => {
@@ -9,25 +9,26 @@ const CookieConsent: React.FC<CookieConsentProps> = ({ onConsent }) => {
     <div className="fixed bottom-0 left-0 right-0 bg-chocolate-cosmos text-text-primary p-4 shadow-lg z-50">
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
         <p className="mb-4 sm:mb-0 text-sm sm:text-base">
-          We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+          Utilizziamo i cookie per migliorare la tua esperienza. Continuando a
+          visitare questo sito, accetti il nostro utilizzo dei cookie.
         </p>
         <div className="flex space-x-4">
           <button
             onClick={() => onConsent(true)}
             className="bg-engineering-orange hover:bg-selective-yellow hover:text-rich-black text-text-primary font-bold py-2 px-4 rounded transition duration-300 text-sm sm:text-base"
           >
-            Accept
+            Accetta
           </button>
           <button
             onClick={() => onConsent(false)}
             className="bg-rosewood hover:bg-penn-red text-text-primary font-bold py-2 px-4 rounded transition duration-300 text-sm sm:text-base"
           >
-            Decline
+            Rifiuta
           </button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CookieConsent
+export default CookieConsent;
