@@ -8,8 +8,8 @@ const Home = () => {
     >
       <div className="hidden sm:mb-8 sm:flex sm:justify-center">
         <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-white-600 ring-1 ring-orange-web hover:ring-white-900">
-          #salvateculetto Smarrito Criceto a Bruxelles!{' '}
-          <a href="#" className="font-semibold text-princeton-orange">
+          Il Dio del Massacro sold out a Bruxelles!{' '}
+          <a href="#shows" className="font-semibold text-princeton-orange">
             <span aria-hidden="true" className="absolute inset-0"></span>Scopri di
             pi&ugrave; <span aria-hidden="true">→</span>
           </a>

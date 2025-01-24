@@ -12,7 +12,7 @@ const Team = () => {
       id: 2,
       name: 'Antonio Santangelo',
       role: 'Regista',
-      image: 'https://picsum.photos/seed/picsum/200/300?blur',
+      image: 'images/cast/antonio.jpg',
     },
     {
       id: 3,

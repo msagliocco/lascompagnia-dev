@@ -1,3 +1,1 @@
-# lascompagnia-dev
-
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/msagliocco/lascompagnia-dev)
+Website of the italian theatre company "La Scompagnia"
