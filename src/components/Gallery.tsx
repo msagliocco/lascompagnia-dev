@@ -73,15 +73,26 @@ const Gallery = () => {
           <h3 className="text-3xl font-bold mb-8 text-center heading-gradient">
             Video in evidenza
           </h3>
-          <div className="aspect-w-16 aspect-h-9 mx-auto">
-            <iframe
-              className="w-full h-full rounded-lg shadow-lg"
-              src="https://www.youtube.com/embed/qWC4zvh1T5c?si=Z4TxVZzNiq76D8dh"
-              title="La Tesi di Ernesto - La Scompagnia - Video in evidenza"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+          <div className="space-y-8">
+            <div className="aspect-w-16 aspect-h-9 mx-auto">
+              <iframe
+                className="w-full h-full rounded-lg shadow-lg"
+                src="https://player.clevercast.com?autoplay=false&amp;autoload=off&amp;captions_default=nl&amp;captions_default_show=true&amp;chromecast=true&amp;account_id=WXv1JD&amp;item_id=A6zJdD&amp;comm_url=&amp;comm_url_prefetch=false"
+                title="Clevercast Video"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="aspect-w-16 aspect-h-9 mx-auto">
+              <iframe
+                className="w-full h-full rounded-lg shadow-lg"
+                src="https://www.youtube.com/embed/qWC4zvh1T5c?si=Z4TxVZzNiq76D8dh"
+                title="La Tesi di Ernesto - La Scompagnia - Video in evidenza"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

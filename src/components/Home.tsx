@@ -8,10 +8,9 @@ const Home = () => {
     >
       <div className="hidden sm:mb-8 sm:flex sm:justify-center">
         <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-white-600 ring-1 ring-orange-web hover:ring-white-900">
-          Il Dio del Massacro sold out a Bruxelles!{' '}
-          <a href="#shows" className="font-semibold text-princeton-orange">
-            <span aria-hidden="true" className="absolute inset-0"></span>Scopri di
-            pi&ugrave; <span aria-hidden="true">→</span>
+          Il Dio del Massacro &egrave; su BRUZZ!{' '}
+          <a href="https://www.bruzz.be/en/videoreeks/bruzz-international-op-zondag/video-amateur-theatre-company-la-scompagnia-i-missed" className="font-semibold text-princeton-orange">
+            <span aria-hidden="true" className="absolute inset-0"></span>Guarda il video<span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

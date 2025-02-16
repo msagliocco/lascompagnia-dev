@@ -36,7 +36,7 @@ Regia: Antonio Santangelo<br/>
               Prossima replica: 28 Febbraio 2025<br />
               Luogo: Théâtre L'Improviste, Forest<br />
               Durata: Circa 90 minuti<br />
-              Sottotitoli in francese - VOSTFR
+              Subtitles: FR - EN
             </p>
             <p className="text-lg font-semibold text-selective-yellow mb-6">
               Prenota i tuoi posti ora e preparati per una serata indimenticabile di teatro italiano a Bruxelles!
