@@ -6,25 +6,27 @@ interface CookieConsentProps {
 
 const CookieConsent: React.FC<CookieConsentProps> = ({ onConsent }) => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-chocolate-cosmos text-text-primary p-4 shadow-lg z-50">
-      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center">
-        <p className="mb-4 sm:mb-0 text-sm sm:text-base">
-          Utilizziamo i cookie per migliorare la tua esperienza. Continuando a
-          visitare questo sito, accetti il nostro utilizzo dei cookie.
-        </p>
-        <div className="flex space-x-4">
-          <button
-            onClick={() => onConsent(true)}
-            className="bg-engineering-orange hover:bg-selective-yellow hover:text-rich-black text-text-primary font-bold py-2 px-4 rounded transition duration-300 text-sm sm:text-base"
-          >
-            Accetta
-          </button>
-          <button
-            onClick={() => onConsent(false)}
-            className="bg-rosewood hover:bg-penn-red text-text-primary font-bold py-2 px-4 rounded transition duration-300 text-sm sm:text-base"
-          >
-            Rifiuta
-          </button>
+    <div className="fixed bottom-0 left-0 right-0 p-4 z-50 flex justify-center pointer-events-none">
+      <div className="brutal-card bg-pitch-black border-2 border-off-white shadow-brutal pointer-events-auto max-w-4xl w-full">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="font-mono text-sm text-off-white text-center sm:text-left">
+            <span className="font-bold text-neon-lime uppercase mr-2">Cookies?</span>
+            Utilizziamo i cookie per migliorare la tua esperienza.
+          </p>
+          <div className="flex space-x-4">
+            <button
+              onClick={() => onConsent(true)}
+              className="font-mono font-bold uppercase bg-neon-lime text-pitch-black px-4 py-2 border-2 border-transparent hover:bg-off-white hover:border-off-white transition-colors shadow-[2px_2px_0px_0px_#fff]"
+            >
+              Accetta
+            </button>
+            <button
+              onClick={() => onConsent(false)}
+              className="font-mono font-bold uppercase bg-transparent text-off-white px-4 py-2 border-2 border-off-white hover:bg-neon-pink hover:text-pitch-black hover:border-transparent transition-colors shadow-[2px_2px_0px_0px_#fff]"
+            >
+              Rifiuta
+            </button>
+          </div>
         </div>
       </div>
     </div>

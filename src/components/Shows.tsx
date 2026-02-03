@@ -47,74 +47,86 @@ const Shows = () => {
   ];
 
   return (
-    <section id="shows" className="py-20 section-bg-light backdrop-blur-md">
+    <section id="shows" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center heading-gradient">
+        <h2 className="text-4xl md:text-5xl font-black mb-12 text-center uppercase tracking-tighter text-off-white drop-shadow-[4px_4px_0_#ccff00]">
           Spettacoli
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {shows.map((show) => (
             <div
               key={show.id}
-              className="flex flex-col rounded-lg overflow-hidden shadow-lg bg-chocolate-cosmos/90 hover:shadow-2xl transition-shadow duration-300"
+              className="brutal-card flex flex-col p-4 bg-gray-900 border-2 border-off-white"
             >
-              <img
-                src={show.image}
-                alt={show.title}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-2xl font-semibold mb-1 text-selective-yellow">
+              <div className="relative border-b-2 border-off-white mb-4 pb-4">
+                <img
+                  src={show.image}
+                  alt={show.title}
+                  className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                />
+                <div className="absolute top-0 right-0 bg-neon-lime text-pitch-black font-mono font-bold px-3 py-1 border-2 border-pitch-black transform translate-x-2 -translate-y-2">
+                  #{show.id}
+                </div>
+              </div>
+
+              <div className="flex-grow flex flex-col">
+                <h3 className="text-3xl font-black mb-2 uppercase text-off-white leading-none">
                   {show.title}
                 </h3>
-                <p className="text-sm italic mb-3 text-princeton-orange">
+                <p className="text-sm font-mono text-neon-cyan mb-4 uppercase tracking-wider">
                   {show.subtitle}
                 </p>
-                <p className="mb-4 text-text-primary font-medium">
+
+                <div className="mb-6 font-mono text-xs border-l-2 border-neon-pink pl-4">
                   {show.dates.map((date, index) => (
-                    <span key={index}>
+                    <span key={index} className="block mb-1">
                       {date}
-                      {index < show.dates.length - 1 ? ', ' : ''}
                     </span>
                   ))}
-                </p>
-                <div className="mb-4 text-text-secondary flex-grow space-y-4">
+                </div>
+
+                <div className="mb-6 text-off-white space-y-4 font-mono text-sm leading-relaxed">
                   {show.description.map((paragraph, index) => (
-                    <p key={index} className={index === show.description.length - 1 ? 'italic text-selective-yellow font-medium' : ''}>
+                    <p key={index} className={index === show.description.length - 1 ? 'text-neon-lime font-bold' : ''}>
                       {paragraph}
                     </p>
                   ))}
                 </div>
-                <div className="flex justify-between items-center pt-4 border-t border-princeton-orange/20">
-                  <p className="capitalize font-semibold text-princeton-orange">
-                    {show.status}
-                  </p>
-                  {show.status.toLowerCase().includes('prossim') && (
-                    <a href="#booking" className="glow-button text-sm">
-                      Prenota ora!
-                    </a>
-                  )}
+
+                <div className="mt-auto pt-4 border-t-2 border-dashed border-gray-700">
+                  <div className="flex justify-between items-center">
+                    <span className="font-mono text-xs uppercase text-gray-400">
+                      STATUS: {show.status}
+                    </span>
+                    {show.status.toLowerCase().includes('prossim') && (
+                      <a href="#booking" className="brutal-btn text-sm py-2 px-4">
+                        PRENOTA
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <h3 className="text-2xl font-bold mb-4 text-selective-yellow">
-            Resta aggiornato
+
+        <div className="text-center mt-20 border-2 border-off-white p-8 bg-neon-cyan text-pitch-black shadow-brutal max-w-2xl mx-auto transform rotate-1 hover:rotate-0 transition-transform">
+          <h3 className="text-3xl font-black mb-4 uppercase">
+            Resta Aggiornato
           </h3>
 
-          <p className="text-lg mb-6 text-text-secondary">
-            Iscriviti alla nostra newsletter per ricevere aggiornamenti sugli
-            spettacoli, offerte e news in anteprima!
+          <p className="font-mono font-bold mb-6 text-lg">
+            Non perdere le novità, iscriviti alla newsletter!
           </p>
+
           <a
             href="https://2bc6204c.sibforms.com/serve/MUIFAAdp42exZq-2IxRY-VoqtlkKnBibUpWXTPoh1FUuIvyMZWzod0KfjIQR9I3JXDDgTPYCaQICEzO1EOzGUfFIMwsAwFJgq1DIQ0wNyO1n3g_GDeFP9MsFNs2K9tSM5XAYgQEmox7DNhFN9mQOnqICMJmYkw1CBDdFS4Yhhc7H3wGgR77o89N0ZHVR_UyIHuukfP7ov4Hg76KR"
             target="_blank"
             rel="noopener noreferrer"
-            className="glow-button"
+            className="inline-block bg-pitch-black text-neon-cyan font-bold font-mono uppercase px-8 py-3 border-2 border-pitch-black hover:bg-off-white hover:text-pitch-black transition-all shadow-[4px_4px_0px_0px_#000]"
           >
-            Iscriviti alla newsletter
+            Iscriviti Subito
           </a>
         </div>
       </div>

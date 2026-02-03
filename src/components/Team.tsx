@@ -47,29 +47,33 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-20 section-bg">
+    <section id="team" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-center heading-gradient">
-          Il nostro team
+        <h2 className="text-4xl md:text-5xl font-black mb-16 text-center uppercase tracking-tighter text-off-white drop-shadow-[4px_4px_0_#ccff00]">
+          Il Nostro Team
         </h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {members.map((member) => (
             <div
               key={member.id}
-              className="group relative overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition duration-300"
+              className="group relative border-2 border-off-white bg-gray-900 overflow-hidden shadow-brutal hover:shadow-brutal-hover transition-all duration-200"
             >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-80 object-cover transition duration-300 filter saturate-50 blur-0 group-hover:saturate-100 group-hover:blur-none"
-              />
-              <div className="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-rich-black/90 to-transparent">
-                <div className="text-center w-full">
-                  <h3 className="text-2xl font-semibold mb-2 text-selective-yellow">
-                    {member.name}
-                  </h3>
-                  <p className="text-lg text-text-primary">{member.role}</p>
-                </div>
+              <div className="relative aspect-w-4 aspect-h-5 border-b-2 border-off-white">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-80 object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+
+              <div className="p-4 bg-gray-900 relative">
+                <h3 className="text-xl font-bold uppercase text-off-white group-hover:text-neon-pink transition-colors">
+                  {member.name}
+                </h3>
+                <p className="font-mono text-xs text-neon-lime mt-2 uppercase tracking-wide border-t border-gray-700 pt-2">
+                  {member.role}
+                </p>
               </div>
             </div>
           ))}
