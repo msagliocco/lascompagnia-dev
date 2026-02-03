@@ -4,10 +4,24 @@ const Shows = () => {
   const shows = [
     {
       id: 1,
+      title: 'Coppia aperta quasi spalancata',
+      subtitle: 'Una commedia di Dario Fo e Franca Rame',
+      dates: ['21/03/2026', '22/03/2026'],
+      status: 'Prossime repliche 21 e 22 marzo 2026',
+      image:
+        'images/La Scompagnia - Locandina coppia aperta quasi spalancata.jpeg',
+      description: [
+        'Una coppia sposata affronta le sfide della fedeltà e della libertà in una relazione "aperta". Tra situazioni comiche e momenti di riflessione, lo spettacolo esplora con ironia le dinamiche di coppia.',
+        'Un classico del teatro italiano firmato da Dario Fo e Franca Rame, che mette in scena le contraddizioni dell\'amore moderno con intelligenza e umorismo.',
+        'Con Antonella Picarella e Antonio Santangelo. Regia di Antonio Santangelo.',
+      ],
+    },
+    {
+      id: 2,
       title: 'Il Dio del Massacro',
       subtitle: "Dall'acclamato testo di Yasmina Reza",
       dates: ['30/11/2024', '01/12/2024', '28/02/2025'],
-      status: 'Prossima replica 28 febbraio 2025',
+      status: 'Conclusi',
       image:
         'images/Il Dio del Massacro - La Scompagnia Bruxelles - locandina semplificata.jpg',
       description: [
@@ -17,7 +31,7 @@ const Shows = () => {
       ],
     },
     {
-      id: 2,
+      id: 3,
       title: 'La Tesi di Ernesto',
       subtitle: 'Una commedia brillante e surreale',
       dates: ['08/12/2019'],

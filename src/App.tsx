@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -11,14 +11,10 @@ import OurStory from './components/OurStory';
 import GlowBackground from './components/GlowBackground';
 
 function App() {
-  const [showCookieConsent, setShowCookieConsent] = useState(false);
-
-  useEffect(() => {
+  const [showCookieConsent, setShowCookieConsent] = useState(() => {
     const consent = localStorage.getItem('cookieConsent');
-    if (consent === null) {
-      setShowCookieConsent(true);
-    }
-  }, []);
+    return consent === null;
+  });
 
   const handleCookieConsent = (accepted: boolean) => {
     localStorage.setItem('cookieConsent', accepted.toString());
