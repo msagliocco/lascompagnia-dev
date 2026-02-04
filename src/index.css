@@ -1,28 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-mono: 'Space Mono', monospace;
+  --font-display: 'Archivo Black', 'Helvetica Neue', sans-serif;
+  --font-body: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
 
-  --color-neon-lime: #ccff00;
-  --color-neon-pink: #ff0099;
-  --color-neon-cyan: #00f3ff;
-  --color-off-white: #f0f0f0;
-  --color-pitch-black: #050505;
-  --color-gray-900: #121212;
-  --color-gray-800: #1e1e1e;
+  --color-wall: #eee5d6;
+  --color-off-white: #f4f1e8;
+  --color-pitch-black: #15130f;
+  --color-gray-900: #1b1914;
+  --color-gray-800: #26231c;
 
-  /* Brutalist utilities */
-  --shadow-brutal: 4px 4px 0px 0px #000;
-  --shadow-brutal-hover: 6px 6px 0px 0px #ccff00;
-  --shadow-brutal-sm: 2px 2px 0px 0px #000;
+  --color-neon-lime: #ff4d2d;
+  --color-neon-pink: #b63a24;
+  --color-neon-cyan: #d9d2c1;
+
+  /* Poster utilities */
+  --shadow-brutal: 2px 2px 0px 0px #15130f;
+  --shadow-brutal-hover: 3px 3px 0px 0px #ff4d2d;
+  --shadow-brutal-sm: 1px 1px 0px 0px #15130f;
 }
 
 body {
-  font-family: var(--font-display);
-  background-color: var(--color-pitch-black);
-  color: var(--color-off-white);
+  font-family: var(--font-body);
+  background-color: var(--color-wall);
+  color: var(--color-pitch-black);
   overflow-x: hidden;
 }
 
@@ -33,28 +36,319 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 /* Custom classes for reuse */
 .brutal-btn {
-  @apply font-mono font-bold uppercase tracking-wider border-2 border-off-white bg-transparent text-off-white px-6 py-3 transition-all duration-200 cursor-pointer hover:bg-neon-lime hover:text-pitch-black hover:border-transparent hover:shadow-[4px_4px_0px_0px_#ff0099] active:translate-y-1 active:shadow-none;
+  @apply font-mono font-bold uppercase tracking-wider border-2 border-pitch-black bg-neon-lime text-pitch-black px-6 py-3 transition-all duration-200 cursor-pointer hover:bg-off-white hover:text-pitch-black hover:border-pitch-black hover:shadow-[2px_2px_0px_0px_#15130f] active:translate-y-[1px] active:shadow-none;
+}
+
+.brutal-btn-sm {
+  @apply px-4 py-2 text-sm;
 }
 
 .brutal-card {
-  @apply border-2 border-off-white bg-gray-900 p-6 shadow-[8px_8px_0px_0px_#333] hover:shadow-[8px_8px_0px_0px_#ccff00] hover:-translate-y-1 transition-all duration-200;
+  @apply border-2 border-pitch-black bg-off-white text-pitch-black p-6 shadow-[2px_2px_0px_0px_#15130f] transition-all duration-200;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0));
 }
 
 .brutal-input {
-  @apply bg-transparent border-2 border-off-white p-3 font-mono text-off-white w-full focus:outline-none focus:border-neon-lime focus:shadow-[4px_4px_0px_0px_#ccff00];
+  @apply bg-off-white border-2 border-pitch-black p-3 font-mono text-pitch-black w-full focus:outline-none focus:border-neon-lime focus:shadow-[2px_2px_0px_0px_#ff4d2d];
 }
 
-/* Grid background helper */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+.poster-card {
+  @apply border-2 border-pitch-black bg-off-white text-pitch-black p-6 shadow-[3px_3px_0px_0px_#15130f] transition-transform duration-200 relative overflow-hidden;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0));
+}
+
+.poster-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0px, rgba(0, 0, 0, 0.06) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.04) 0px, rgba(0, 0, 0, 0.04) 1px, transparent 1px, transparent 4px);
+}
+
+.poster-card-flush {
+  @apply p-0;
+}
+
+.note-card {
+  @apply border-2 border-pitch-black bg-off-white text-pitch-black px-4 py-3 shadow-[1px_1px_0px_0px_#15130f] relative overflow-hidden;
+}
+
+.note-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background-image:
+    repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0px, rgba(0, 0, 0, 0.05) 1px, transparent 1px, transparent 5px);
+}
+
+.polaroid-card {
+  @apply border-2 border-pitch-black bg-off-white p-3 pb-6 shadow-[4px_4px_0px_0px_#15130f] relative;
+  transform-origin: 26px -6px;
+  /* pin location */
+  will-change: transform;
+}
+
+.motion-polaroid {
+  transition: none;
+}
+
+
+.polaroid-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 18px;
+  width: 56px;
+  height: 16px;
+  background: var(--color-neon-cyan);
+  border: 2px solid var(--color-pitch-black);
+  transform: rotate(-4deg);
+  box-shadow: 1px 1px 0 0 var(--color-pitch-black);
+}
+
+
+.stitch-link {
+  position: absolute;
+  left: 26px;
+  top: -36px;
+  width: 3px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 20;
+  background-image: repeating-linear-gradient(180deg, #f4f1e8 0 4px, transparent 4px 8px);
+  opacity: 0.9;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.65), 0 0 6px rgba(255, 255, 255, 0.35);
+  transform: rotate(-6deg);
+  transform-origin: 50% 90%;
+}
+
+.stitch-link::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -7px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-pitch-black);
+  background: var(--color-neon-orange);
+  border-radius: 999px;
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.45),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 0 6px rgba(255, 255, 255, 0.35);
+}
+
+.stamp-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-neon-lime);
+  color: var(--color-pitch-black);
+  border: 2px solid var(--color-pitch-black);
+  font-family: var(--font-display);
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 0 0 var(--color-pitch-black);
+}
+
+.stamp-mark::after {
+  content: '';
+  position: absolute;
+  inset: -4px -4px auto auto;
+  width: 14px;
+  height: 14px;
+  background: var(--color-off-white);
+  border: 2px solid var(--color-pitch-black);
+  transform: rotate(-4deg);
+}
+
+.stamp-mini {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.35rem;
+  box-shadow: 1px 1px 0 0 var(--color-pitch-black);
+}
+
+.stamp-featured {
+  font-size: 0.95rem;
+  padding: 0.2rem 0.55rem;
+}
+
+.torn-edge {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 92% 96%, 86% 93%, 78% 97%, 70% 94%, 62% 98%, 54% 94%, 46% 97%, 38% 94%, 30% 98%, 22% 94%, 14% 97%, 8% 94%, 0 96%);
+}
+
+.bw-hover {
+  filter: none;
+  transform: scale(1);
+  transition: filter 300ms ease, transform 300ms ease;
+}
+
+.bw-hover-nozoom {
+  transform: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bw-hover {
+    filter: grayscale(1);
+  }
+
+  .bw-hover-group:hover .bw-hover {
+    filter: grayscale(0);
+    transform: scale(1.03);
+  }
+
+  .bw-hover-group:hover .bw-hover-nozoom {
+    transform: none;
+  }
+}
+
+.team-photo {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-pitch-black);
+}
+
+.team-photo img {
+  position: relative;
+  z-index: 0;
+  filter: grayscale(1) contrast(1.15) brightness(1.05);
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+
+.team-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-neon-lime);
+  mix-blend-mode: multiply;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.98;
+  transition: opacity 300ms ease;
+}
+
+.team-photo--light {
+  background-color: color-mix(in srgb, var(--color-neon-lime) 25%, var(--color-off-white));
+}
+
+.team-photo--light img {
+  filter: grayscale(1) contrast(1.25) brightness(1.08);
+  mix-blend-mode: multiply;
+}
+
+.team-photo--light::before {
+  background-color: var(--color-neon-lime);
+  mix-blend-mode: color-burn;
+  opacity: 0.45;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bw-hover-group:hover .team-photo .bw-hover {
+    filter: none;
+    mix-blend-mode: normal;
+  }
+
+  .bw-hover-group:hover .team-photo::before {
+    opacity: 0;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .poster-card .bw-hover {
+    filter: none;
+  }
+}
+
+/* Brutalist background pattern */
+.bg-brutalist-pattern {
+  background-image: url('/brutalist-pattern.png');
+  background-size: 512px 512px;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.bg-brutalist-wall {
+  background-color: var(--color-wall);
+  background-image:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0 2px, transparent 2px 42px),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.06) 0 2px, transparent 2px 34px),
+    repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0 6px, transparent 6px 14px);
+  background-size: 280px 280px, 220px 220px, 140px 140px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.bg-ornaments {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-stripes {
+  position: fixed;
+  inset: -20vh -30vw;
+  background-image: linear-gradient(115deg, rgba(0, 0, 0, 0.06) 0 16%, transparent 16% 50%, rgba(0, 0, 0, 0.05) 50% 58%, transparent 58% 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+  z-index: 0;
+  will-change: transform;
+}
+
+.bg-ornament-wrap {
+  position: absolute;
+  z-index: 1;
+  will-change: transform;
+}
+
+.bg-ornament {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.08);
+  mix-blend-mode: multiply;
+  will-change: transform;
+}
+
+.bg-initials {
+  position: fixed;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(360px, 120vw, 1600px);
+  line-height: 0.75;
+  letter-spacing: -0.04em;
+  color: rgba(0, 0, 0, 0.08);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  text-transform: uppercase;
+  z-index: 0;
+  will-change: transform;
+}
+
+.bg-brutalist-wall > :not(.bg-ornaments) {
+  position: relative;
+  z-index: 2;
 }
 
 .aspect-w-16 {

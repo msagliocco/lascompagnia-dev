@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Shows = () => {
   const shows = [
     {
@@ -47,9 +45,9 @@ const Shows = () => {
   ];
 
   return (
-    <section id="shows" className="py-20">
+    <section id="shows" className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-black mb-12 text-center uppercase tracking-tighter text-off-white drop-shadow-[4px_4px_0_#ccff00]">
+        <h2 className="text-4xl md:text-5xl font-black mb-12 text-center uppercase tracking-tight text-pitch-black">
           Spettacoli
         </h2>
 
@@ -57,36 +55,36 @@ const Shows = () => {
           {shows.map((show) => (
             <div
               key={show.id}
-              className="brutal-card flex flex-col p-4 bg-gray-900 border-2 border-off-white"
+              className="poster-card flex flex-col p-4"
             >
-              <div className="relative border-b-2 border-off-white mb-4 pb-4">
+              <div className="relative border-b-2 border-pitch-black mb-4 pb-4 bw-hover-group">
                 <img
                   src={show.image}
                   alt={show.title}
-                  className="w-full h-80 object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                  className="w-full h-80 object-cover bw-hover transition-all duration-300"
                 />
-                <div className="absolute top-0 right-0 bg-neon-lime text-pitch-black font-mono font-bold px-3 py-1 border-2 border-pitch-black transform translate-x-2 -translate-y-2">
+                <div className="stamp-mark stamp-mini absolute top-0 right-0 translate-x-2 -translate-y-2">
                   #{show.id}
                 </div>
               </div>
 
               <div className="flex-grow flex flex-col">
-                <h3 className="text-3xl font-black mb-2 uppercase text-off-white leading-none">
+                <h3 className="text-3xl font-black mb-2 uppercase text-neon-pink leading-none">
                   {show.title}
                 </h3>
-                <p className="text-sm font-mono text-neon-cyan mb-4 uppercase tracking-wider">
+                <p className="text-xs font-mono text-gray-700 mb-4 uppercase tracking-[0.3em]">
                   {show.subtitle}
                 </p>
 
-                <div className="mb-6 font-mono text-xs border-l-2 border-neon-pink pl-4">
+                <div className="note-card mb-6 font-mono text-xs uppercase tracking-[0.2em]">
                   {show.dates.map((date, index) => (
-                    <span key={index} className="block mb-1">
+                    <span key={index} className="block mb-1 text-pitch-black">
                       {date}
                     </span>
                   ))}
                 </div>
 
-                <div className="mb-6 text-off-white space-y-4 font-mono text-sm leading-relaxed">
+                <div className="mb-6 text-pitch-black space-y-4 text-sm leading-relaxed">
                   {show.description.map((paragraph, index) => (
                     <p key={index} className={index === show.description.length - 1 ? 'text-neon-lime font-bold' : ''}>
                       {paragraph}
@@ -94,13 +92,13 @@ const Shows = () => {
                   ))}
                 </div>
 
-                <div className="mt-auto pt-4 border-t-2 border-dashed border-gray-700">
+                <div className="mt-auto pt-4 border-t-2 border-dashed border-pitch-black/20">
                   <div className="flex justify-between items-center">
-                    <span className="font-mono text-xs uppercase text-gray-400">
+                    <span className="font-mono text-xs uppercase text-gray-700">
                       STATUS: {show.status}
                     </span>
                     {show.status.toLowerCase().includes('prossim') && (
-                      <a href="#booking" className="brutal-btn text-sm py-2 px-4">
+                      <a href="#booking" className="brutal-btn brutal-btn-sm">
                         PRENOTA
                       </a>
                     )}
@@ -111,7 +109,7 @@ const Shows = () => {
           ))}
         </div>
 
-        <div className="text-center mt-20 border-2 border-off-white p-8 bg-neon-cyan text-pitch-black shadow-brutal max-w-2xl mx-auto transform rotate-1 hover:rotate-0 transition-transform">
+        <div className="text-center mt-20 border-2 border-pitch-black p-8 bg-neon-lime text-pitch-black shadow-brutal max-w-2xl mx-auto torn-edge">
           <h3 className="text-3xl font-black mb-4 uppercase">
             Resta Aggiornato
           </h3>
@@ -124,13 +122,13 @@ const Shows = () => {
             href="https://2bc6204c.sibforms.com/serve/MUIFAAdp42exZq-2IxRY-VoqtlkKnBibUpWXTPoh1FUuIvyMZWzod0KfjIQR9I3JXDDgTPYCaQICEzO1EOzGUfFIMwsAwFJgq1DIQ0wNyO1n3g_GDeFP9MsFNs2K9tSM5XAYgQEmox7DNhFN9mQOnqICMJmYkw1CBDdFS4Yhhc7H3wGgR77o89N0ZHVR_UyIHuukfP7ov4Hg76KR"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-pitch-black text-neon-cyan font-bold font-mono uppercase px-8 py-3 border-2 border-pitch-black hover:bg-off-white hover:text-pitch-black transition-all shadow-[4px_4px_0px_0px_#000]"
+            className="inline-block bg-pitch-black text-off-white font-bold font-mono uppercase px-8 py-3 border-2 border-pitch-black hover:bg-off-white hover:text-pitch-black transition-all shadow-[2px_2px_0px_0px_#15130f]"
           >
             Iscriviti Subito
           </a>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };
 

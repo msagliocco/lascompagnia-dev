@@ -18,23 +18,25 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-pitch-black border-b-2 border-off-white">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-off-white text-pitch-black border-b-2 border-pitch-black">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <div className="bg-neon-lime text-pitch-black font-bold p-2 border-2 border-off-white shadow-[4px_4px_0px_0px_#fff]">
+          <div className="stamp-mark w-10 h-10 text-lg">
             LS
           </div>
-          <h1 className="text-2xl font-bold tracking-tighter uppercase font-display">La Scompagnia</h1>
+          <div>
+            <p className="text-xl sm:text-2xl font-black uppercase font-display tracking-tight">La Scompagnia</p>
+          </div>
         </div>
 
         {/* Desktop Nav */}
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
             {navItems.map((item) => (
-              <li key={item.name}>
+              <li key={item.name} className="relative">
                 <a
                   href={item.href}
-                  className="font-mono font-bold uppercase text-sm hover:bg-neon-lime hover:text-pitch-black px-2 py-1 transition-colors duration-200"
+                  className="font-mono font-bold uppercase text-xs tracking-widest px-2 py-1 transition-colors duration-200 hover:text-neon-lime"
                 >
                   {item.name}
                 </a>
@@ -45,7 +47,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden border-2 border-off-white p-2 hover:bg-neon-lime hover:text-pitch-black transition-colors"
+          className="md:hidden border-2 border-pitch-black p-2 hover:bg-neon-lime hover:text-pitch-black transition-colors"
           onClick={toggleMenu}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -54,13 +56,13 @@ const Header = () => {
 
       {/* Mobile Nav */}
       {isMenuOpen && (
-        <nav className="md:hidden border-t-2 border-off-white bg-gray-900">
+        <nav className="md:hidden border-t-2 border-pitch-black bg-off-white text-pitch-black">
           <ul className="flex flex-col">
             {navItems.map((item) => (
-              <li key={item.name} className="border-b border-gray-800 last:border-0">
+              <li key={item.name} className="border-b border-pitch-black/20 last:border-0">
                 <a
                   href={item.href}
-                  className="block py-4 px-6 font-mono font-bold uppercase hover:bg-neon-lime hover:text-pitch-black transition-colors"
+                  className="block py-4 px-6 font-mono font-bold uppercase tracking-widest hover:bg-neon-lime hover:text-pitch-black transition-colors"
                   onClick={toggleMenu}
                 >
                   {item.name}
