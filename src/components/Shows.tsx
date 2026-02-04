@@ -45,7 +45,7 @@ const Shows = () => {
   ];
 
   return (
-    <section id="shows" className="py-16">
+    <section id="shows" className="py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-black mb-12 text-center uppercase tracking-tight text-pitch-black">
           Spettacoli
@@ -109,23 +109,38 @@ const Shows = () => {
           ))}
         </div>
 
-        <div className="text-center mt-20 border-2 border-pitch-black p-8 bg-neon-lime text-pitch-black shadow-brutal max-w-2xl mx-auto torn-edge">
-          <h3 className="text-3xl font-black mb-4 uppercase">
-            Resta Aggiornato
-          </h3>
+        <div className="relative mt-20 max-w-2xl mx-auto">
+          {/* Stacked offset layers for depth */}
+          <div className="absolute inset-0 bg-pitch-black translate-x-3 translate-y-3 border-2 border-pitch-black"></div>
+          <div className="absolute inset-0 bg-neon-pink translate-x-1.5 translate-y-1.5 border-2 border-pitch-black"></div>
 
-          <p className="font-mono font-bold mb-6 text-lg">
-            Non perdere le novità, iscriviti alla newsletter!
-          </p>
+          {/* Main card */}
+          <div className="relative bg-off-white border-4 border-pitch-black p-8 text-center">
+            {/* Rotated stamp badge */}
+            <div className="absolute -top-4 -right-4 rotate-12">
+              <div className="stamp-mark px-3 py-1 text-sm">NEWS</div>
+            </div>
 
-          <a
-            href="https://2bc6204c.sibforms.com/serve/MUIFAAdp42exZq-2IxRY-VoqtlkKnBibUpWXTPoh1FUuIvyMZWzod0KfjIQR9I3JXDDgTPYCaQICEzO1EOzGUfFIMwsAwFJgq1DIQ0wNyO1n3g_GDeFP9MsFNs2K9tSM5XAYgQEmox7DNhFN9mQOnqICMJmYkw1CBDdFS4Yhhc7H3wGgR77o89N0ZHVR_UyIHuukfP7ov4Hg76KR"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-pitch-black text-off-white font-bold font-mono uppercase px-8 py-3 border-2 border-pitch-black hover:bg-off-white hover:text-pitch-black transition-all shadow-[2px_2px_0px_0px_#15130f]"
-          >
-            Iscriviti Subito
-          </a>
+            <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-pitch-black mb-2">
+              Resta
+            </h3>
+            <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-neon-lime mb-6">
+              Aggiornato
+            </h3>
+
+            <p className="font-mono text-sm uppercase tracking-[0.2em] text-gray-700 mb-8 border-t-2 border-b-2 border-dashed border-pitch-black/30 py-4">
+              Non perdere le novità, iscriviti alla newsletter!
+            </p>
+
+            <a
+              href="https://2bc6204c.sibforms.com/serve/MUIFAAdp42exZq-2IxRY-VoqtlkKnBibUpWXTPoh1FUuIvyMZWzod0KfjIQR9I3JXDDgTPYCaQICEzO1EOzGUfFIMwsAwFJgq1DIQ0wNyO1n3g_GDeFP9MsFNs2K9tSM5XAYgQEmox7DNhFN9mQOnqICMJmYkw1CBDdFS4Yhhc7H3wGgR77o89N0ZHVR_UyIHuukfP7ov4Hg76KR"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="brutal-btn text-lg inline-block"
+            >
+              Iscriviti Subito →
+            </a>
+          </div>
         </div>
       </div >
     </section >

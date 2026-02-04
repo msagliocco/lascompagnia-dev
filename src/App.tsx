@@ -25,7 +25,7 @@ function App() {
     <div className="min-h-screen flex flex-col relative text-pitch-black bg-brutalist-wall">
       <BackgroundOrnaments />
       <Header />
-      <main className="flex-grow z-10 pt-20 pb-12 px-4 max-w-7xl mx-auto w-full">
+      <main className="flex-grow z-10 pt-14 pb-12 px-4 max-w-7xl mx-auto w-full">
         <Home />
         <OurStory />
         <Shows />

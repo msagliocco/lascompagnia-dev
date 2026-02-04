@@ -203,7 +203,7 @@ const Team = () => {
   };
 
   return (
-    <section id="team" className="py-16 overflow-x-hidden">
+    <section id="team" className="py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-black mb-16 text-center uppercase tracking-tight text-pitch-black">
           Il Nostro Team

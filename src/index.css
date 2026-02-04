@@ -58,7 +58,7 @@ h6 {
 }
 
 .poster-card {
-  @apply border-2 border-pitch-black bg-off-white text-pitch-black p-6 shadow-[3px_3px_0px_0px_#15130f] transition-transform duration-200 relative overflow-hidden;
+  @apply border-2 border-pitch-black bg-off-white text-pitch-black p-4 sm:p-6 shadow-[3px_3px_0px_0px_#15130f] transition-transform duration-200 relative overflow-hidden;
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0));
 }
 
@@ -346,7 +346,7 @@ h6 {
   will-change: transform;
 }
 
-.bg-brutalist-wall > :not(.bg-ornaments) {
+.bg-brutalist-wall> :not(.bg-ornaments) {
   position: relative;
   z-index: 2;
 }

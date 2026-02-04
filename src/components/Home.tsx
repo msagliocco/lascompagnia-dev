@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <section id="home" className="mx-auto max-w-7xl pt-4 pb-16 lg:pt-6 lg:pb-20">
+    <section id="home" className="mx-auto max-w-7xl pt-4 pb-12 lg:pt-6 lg:pb-16">
       <div className="mb-10 px-4">
         <div className="note-card inline-flex flex-wrap items-center gap-3 font-mono text-xs tracking-[0.3em]">
           <span className="stamp-mark stamp-mini">News</span>
@@ -18,7 +18,7 @@ const Home = () => {
 
       <div className="container mx-auto px-4 grid lg:grid-cols-[1.3fr_0.7fr] gap-10 items-end">
         <div>
-          <h1 className="text-6xl md:text-8xl font-black mb-6 uppercase leading-none tracking-tight text-pitch-black">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 uppercase leading-none tracking-tight text-pitch-black">
             TEATRO<br />
             <span className="text-neon-lime">ITALIANO</span><br />
             A BRUXELLES
