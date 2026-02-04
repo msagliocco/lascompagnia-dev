@@ -1,3 +1,5 @@
+import ResponsiveImage from './ResponsiveImage';
+
 const OurStory = () => {
   return (
     <section id="about" className="py-12">
@@ -9,10 +11,15 @@ const OurStory = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2 relative group">
             <div className="absolute inset-0 bg-neon-pink transform translate-x-3 translate-y-3 border-2 border-pitch-black"></div>
-            <img
-              src="images/La Scompagnia collage sito.png"
+            <ResponsiveImage
+              srcBase="images/optimized/la-scompagnia-collage-sito"
               alt="LasCompagnia Teatro"
+              width={2000}
+              height={1600}
+              widths={[480, 960, 1440, 1600]}
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="relative z-10 w-full border-2 border-pitch-black transition-all duration-300 bg-off-white group-hover:scale-[1.03]"
+              loading="lazy"
             />
           </div>
 

@@ -1,3 +1,5 @@
+import ResponsiveImage from './ResponsiveImage';
+
 const Shows = () => {
   const shows = [
     {
@@ -6,8 +8,9 @@ const Shows = () => {
       subtitle: 'Una commedia di Dario Fo e Franca Rame',
       dates: ['21/03/2026', '22/03/2026'],
       status: 'Prossime repliche 21 e 22 marzo 2026',
-      image:
-        'images/La Scompagnia - Locandina coppia aperta quasi spalancata.jpeg',
+      imageBase: 'images/optimized/locandina-coppia-aperta',
+      imageWidth: 1131,
+      imageHeight: 1600,
       description: [
         'Una coppia sposata affronta le sfide della fedeltà e della libertà in una relazione "aperta". Tra situazioni comiche e momenti di riflessione, lo spettacolo esplora con ironia le dinamiche di coppia.',
         'Un classico del teatro italiano firmato da Dario Fo e Franca Rame, che mette in scena le contraddizioni dell\'amore moderno con intelligenza e umorismo.',
@@ -20,8 +23,9 @@ const Shows = () => {
       subtitle: "Dall'acclamato testo di Yasmina Reza",
       dates: ['30/11/2024', '01/12/2024', '28/02/2025'],
       status: 'Conclusi',
-      image:
-        'images/Il Dio del Massacro - La Scompagnia Bruxelles - locandina semplificata.jpg',
+      imageBase: 'images/optimized/locandina-dio-massacro',
+      imageWidth: 707,
+      imageHeight: 1000,
       description: [
         'Due coppie si incontrano per discutere un banale litigio tra i figli, ma presto si ritrovano in un gioco al massacro, dove emergono tensioni profonde tra sé stessi, gli altri e persino la natura.',
         'Lo spettacolo esplora con ironia i modelli contemporanei di uomini e donne, esponendo estremi che convivono dentro ciascuno di noi: uomini indolenti ed inquieti, donne impeccabili e vitali, che si alternano tra la civiltà e la bestialità.',
@@ -34,8 +38,9 @@ const Shows = () => {
       subtitle: 'Una commedia brillante e surreale',
       dates: ['08/12/2019'],
       status: 'Conclusi',
-      image:
-        'images/La-Tesi-di-Ernesto-2019-La-Scompagnia-Locandina-completa.jpg',
+      imageBase: 'images/optimized/locandina-tesi-ernesto',
+      imageWidth: 666,
+      imageHeight: 1000,
       description: [
         'Arianna affronta le sue ultime sedute di terapia con il suo analista decisamente poco convenzionale, Ernesto. I due intraprendono un viaggio tra flashback, immagini oniriche e incontri con personaggi bizzarri.',
         'Nel tentativo di comprendere le radici del terremoto emotivo che ha travolto il matrimonio di Arianna con suo marito Andrea, attraverso ricordi di una vita quotidiana fatta di apatia e momenti assurdi, Ernesto arriva a formulare la sua tesi:',
@@ -58,10 +63,15 @@ const Shows = () => {
               className="poster-card flex flex-col p-4"
             >
               <div className="relative border-b-2 border-pitch-black mb-4 pb-4 bw-hover-group">
-                <img
-                  src={show.image}
+                <ResponsiveImage
+                  srcBase={show.imageBase}
                   alt={show.title}
+                  width={show.imageWidth}
+                  height={show.imageHeight}
+                  widths={[480, 960, 1440, 1600]}
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="w-full h-80 object-cover bw-hover transition-all duration-300"
+                  loading="lazy"
                 />
                 <div className="stamp-mark stamp-mini absolute top-0 right-0 translate-x-2 -translate-y-2">
                   #{show.id}
@@ -124,8 +134,10 @@ const Shows = () => {
             <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-pitch-black mb-2">
               Resta
             </h3>
-            <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-neon-lime mb-6">
-              Aggiornato
+            <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-pitch-black mb-6">
+              <span className="inline-block bg-neon-lime text-pitch-black px-2 border-2 border-pitch-black shadow-[2px_2px_0px_0px_#15130f]">
+                Aggiornato
+              </span>
             </h3>
 
             <p className="font-mono text-sm uppercase tracking-[0.2em] text-gray-700 mb-8 border-t-2 border-b-2 border-dashed border-pitch-black/30 py-4">

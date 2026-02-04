@@ -49,6 +49,9 @@ const Header = () => {
         <button
           className="md:hidden border-2 border-pitch-black p-2 hover:bg-neon-lime hover:text-pitch-black transition-colors"
           onClick={toggleMenu}
+          aria-label={isMenuOpen ? 'Chiudi menu' : 'Apri menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="main-nav"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -56,7 +59,10 @@ const Header = () => {
 
       {/* Mobile Nav */}
       {isMenuOpen && (
-        <nav className="md:hidden border-t-2 border-pitch-black bg-off-white text-pitch-black">
+        <nav
+          id="main-nav"
+          className="md:hidden border-t-2 border-pitch-black bg-off-white text-pitch-black"
+        >
           <ul className="flex flex-col">
             {navItems.map((item) => (
               <li key={item.name} className="border-b border-pitch-black/20 last:border-0">

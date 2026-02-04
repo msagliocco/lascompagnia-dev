@@ -1,3 +1,5 @@
+import ResponsiveImage from './ResponsiveImage';
+
 const Booking = () => {
   return (
     <section id="booking" className="py-12">
@@ -10,10 +12,15 @@ const Booking = () => {
           <div className="flex flex-col md:flex-row gap-12 p-8">
             <div className="md:w-1/2">
               <div className="relative border-2 border-pitch-black p-2 bg-off-white bw-hover-group">
-                <img
-                  src="images/La Scompagnia - Locandina coppia aperta quasi spalancata.jpeg"
+                <ResponsiveImage
+                  srcBase="images/optimized/locandina-coppia-aperta"
                   alt="Coppia aperta quasi spalancata - Locandina"
+                  width={1131}
+                  height={1600}
+                  widths={[480, 960, 1440, 1600]}
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="w-full bw-hover transition-all duration-300"
+                  loading="lazy"
                 />
                 <div className="stamp-mark stamp-mini absolute top-4 left-4">
                   Prossimo Spettacolo

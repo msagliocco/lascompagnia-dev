@@ -6,7 +6,7 @@ interface CookieConsentProps {
 
 const CookieConsent: React.FC<CookieConsentProps> = ({ onConsent }) => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-4 z-50 flex justify-center pointer-events-none">
+    <div className="cookie-consent fixed bottom-0 left-0 right-0 p-4 z-50 flex justify-center pointer-events-none">
       <div className="poster-card pointer-events-auto max-w-4xl w-full">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-mono text-sm text-pitch-black text-center sm:text-left">

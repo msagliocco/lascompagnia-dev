@@ -1,11 +1,14 @@
 import { motion, useInView, useMotionValue, useSpring } from 'motion/react';
 import { useRef, useEffect, useState } from 'react';
+import ResponsiveImage from './ResponsiveImage';
 
 type TeamMember = {
   id: number;
   name: string;
   role: string;
-  image: string;
+  imageBase: string;
+  width: number;
+  height: number;
 };
 
 const pendulumTransition = {
@@ -70,10 +73,15 @@ const TeamCard = ({ member, offsetClass }: { member: TeamMember; offsetClass: st
         onBlur={reset}
       >
         <div className="team-photo team-photo--light relative aspect-w-4 aspect-h-5 border-2 border-pitch-black bg-off-white">
-          <img
-            src={member.image}
+          <ResponsiveImage
+            srcBase={member.imageBase}
             alt={member.name}
+            width={member.width}
+            height={member.height}
+            widths={[320, 640, 960]}
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="w-full h-80 object-cover object-center bw-hover bw-hover-nozoom transition-all duration-300"
+            loading="lazy"
           />
         </div>
 
@@ -96,43 +104,57 @@ const Team = () => {
       id: 1,
       name: 'Antonella Picarella',
       role: 'Attrice',
-      image: 'images/cast/antonella.jpg',
+      imageBase: 'images/optimized/cast-antonella',
+      width: 1719,
+      height: 967,
     },
     {
       id: 2,
       name: 'Antonio Santangelo',
       role: 'Regista',
-      image: 'images/cast/antonio.jpg',
+      imageBase: 'images/optimized/cast-antonio',
+      width: 386,
+      height: 561,
     },
     {
       id: 3,
       name: 'Chiara Cosentino',
       role: 'Attrice - Regista',
-      image: 'images/cast/chiara.jpg',
+      imageBase: 'images/optimized/cast-chiara',
+      width: 1710,
+      height: 1710,
     },
     {
       id: 4,
       name: 'Daniele Corini',
       role: 'Attore',
-      image: 'images/cast/daniele.jpg',
+      imageBase: 'images/optimized/cast-daniele',
+      width: 1971,
+      height: 1971,
     },
     {
       id: 5,
       name: 'Giulio Mancini',
       role: 'Attore',
-      image: 'images/cast/giulio.jpg',
+      imageBase: 'images/optimized/cast-giulio',
+      width: 1942,
+      height: 2346,
     },
     {
       id: 6,
       name: 'Marco Sagliocco',
       role: 'Attore - Musiche',
-      image: 'images/cast/marco.jpg',
+      imageBase: 'images/optimized/cast-marco',
+      width: 1441,
+      height: 1922,
     },
     {
       id: 7,
       name: 'Valeria Garzia',
       role: 'Attrice - Jolly',
-      image: 'images/cast/valeria.jpg',
+      imageBase: 'images/optimized/cast-valeria',
+      width: 1087,
+      height: 1087,
     },
   ];
 
@@ -238,11 +260,16 @@ const Team = () => {
                       onLostPointerCapture={handlePendulumEnd}
                     >
                       <div className="team-photo team-photo--light relative aspect-w-4 aspect-h-5 border-2 border-pitch-black bg-off-white">
-                        <img
-                          src={member.image}
+                        <ResponsiveImage
+                          srcBase={member.imageBase}
                           alt={member.name}
-                          draggable={false}
+                          width={member.width}
+                          height={member.height}
+                          widths={[320, 640, 960]}
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                           className="w-full h-80 object-cover object-center bw-hover bw-hover-nozoom transition-all duration-300"
+                          loading="lazy"
+                          draggable={false}
                         />
                       </div>
 
