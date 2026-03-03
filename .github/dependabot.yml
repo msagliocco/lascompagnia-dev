@@ -7,10 +7,17 @@ updates:
       day: "monday"
       time: "08:00"
       timezone: "Europe/Brussels"
+    open-pull-requests-limit: 3
+    groups:
+      npm-patch-minor:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
     ignore:
       - dependency-name: "eslint"
         versions: [">=10"]
-    open-pull-requests-limit: 10
     labels:
       - "dependencies"
       - "security"
@@ -24,6 +31,11 @@ updates:
       day: "monday"
       time: "08:00"
       timezone: "Europe/Brussels"
+    open-pull-requests-limit: 2
+    groups:
+      github-actions-weekly:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
     commit-message:
