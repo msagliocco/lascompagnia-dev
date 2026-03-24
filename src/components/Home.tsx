@@ -34,7 +34,10 @@ const Home = () => {
         </div>
 
         <div className="flex flex-col gap-6 lg:items-start">
-          <div className="poster-card">
+          <div className="poster-card relative">
+            <div className="absolute top-4 right-4 z-10">
+              <div className="stamp-mark stamp-mini">Sold out</div>
+            </div>
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-gray-700">
               Ultimo spettacolo
             </p>
