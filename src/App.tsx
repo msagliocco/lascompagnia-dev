@@ -11,6 +11,7 @@ import OurStory from './components/OurStory';
 import BackgroundOrnaments from './components/BackgroundOrnaments';
 import CoppiaApertaSection from './components/CoppiaApertaSection';
 import NewsletterSection from './components/NewsletterSection';
+import StructuredData from './components/StructuredData';
 
 const GA_MEASUREMENT_ID = 'G-9PSDYC1FLV';
 
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col relative text-pitch-black bg-brutalist-wall">
+      <StructuredData />
       <BackgroundOrnaments />
       <Header />
       <main className="flex-grow z-10 pt-14 pb-12 px-4 max-w-7xl mx-auto w-full">
