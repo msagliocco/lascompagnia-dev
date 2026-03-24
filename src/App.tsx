@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useSyncExternalStore } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -14,21 +14,45 @@ import NewsletterSection from './components/NewsletterSection';
 import StructuredData from './components/StructuredData';
 
 const GA_MEASUREMENT_ID = 'G-9PSDYC1FLV';
+const COOKIE_CONSENT_KEY = 'cookieConsent';
+const COOKIE_CONSENT_EVENT = 'cookie-consent-change';
+
+const readCookieConsent = (): 'accepted' | 'declined' | null => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  const consent = window.localStorage.getItem(COOKIE_CONSENT_KEY);
+  if (consent === 'true' || consent === 'accepted') {
+    return 'accepted';
+  }
+  if (consent === 'false' || consent === 'declined') {
+    return 'declined';
+  }
+  return null;
+};
+
+const subscribeToCookieConsent = (onStoreChange: () => void) => {
+  if (typeof window === 'undefined') {
+    return () => undefined;
+  }
+
+  const handleChange = () => onStoreChange();
+  window.addEventListener('storage', handleChange);
+  window.addEventListener(COOKIE_CONSENT_EVENT, handleChange);
+
+  return () => {
+    window.removeEventListener('storage', handleChange);
+    window.removeEventListener(COOKIE_CONSENT_EVENT, handleChange);
+  };
+};
 
 function App() {
-  const [cookieConsent, setCookieConsent] = useState<'accepted' | 'declined' | null>(() => {
-    const consent = localStorage.getItem('cookieConsent');
-    if (consent === 'true') {
-      return 'accepted';
-    }
-    if (consent === 'false') {
-      return 'declined';
-    }
-    if (consent === 'accepted' || consent === 'declined') {
-      return consent;
-    }
-    return null;
-  });
+  const cookieConsent = useSyncExternalStore(
+    subscribeToCookieConsent,
+    readCookieConsent,
+    () => null,
+  );
 
   useEffect(() => {
     if (cookieConsent !== 'accepted') return;
@@ -51,8 +75,8 @@ function App() {
 
   const handleCookieConsent = (accepted: boolean) => {
     const value = accepted ? 'accepted' : 'declined';
-    localStorage.setItem('cookieConsent', value);
-    setCookieConsent(value);
+    window.localStorage.setItem(COOKIE_CONSENT_KEY, value);
+    window.dispatchEvent(new Event(COOKIE_CONSENT_EVENT));
   };
 
   return (
