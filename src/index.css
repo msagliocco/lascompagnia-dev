@@ -225,7 +225,7 @@ h6 {
 .team-photo img {
   position: relative;
   z-index: 0;
-  filter: grayscale(1) contrast(1.15) brightness(1.05);
+  filter: none;
   mix-blend-mode: normal;
   opacity: 1;
 }
@@ -238,7 +238,7 @@ h6 {
   mix-blend-mode: multiply;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.98;
+  opacity: 0;
   transition: opacity 300ms ease;
 }
 
@@ -247,17 +247,69 @@ h6 {
 }
 
 .team-photo--light img {
-  filter: grayscale(1) contrast(1.25) brightness(1.08);
-  mix-blend-mode: multiply;
+  filter: none;
+  mix-blend-mode: normal;
 }
 
 .team-photo--light::before {
   background-color: var(--color-neon-lime);
   mix-blend-mode: color-burn;
-  opacity: 0.45;
+  opacity: 0;
+}
+
+.gallery-photo {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-off-white);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0));
+}
+
+.gallery-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.12) 38%, rgba(0, 0, 0, 0.24));
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 300ms ease;
+}
+
+.gallery-photo img {
+  position: relative;
+  z-index: 1;
+  filter: none;
+  mix-blend-mode: normal;
+  opacity: 1;
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .team-photo img {
+    filter: grayscale(1) contrast(1.15) brightness(1.05);
+  }
+
+  .team-photo::before {
+    opacity: 0.98;
+  }
+
+  .team-photo--light img {
+    filter: grayscale(1) contrast(1.25) brightness(1.08);
+    mix-blend-mode: multiply;
+  }
+
+  .team-photo--light::before {
+    opacity: 0.45;
+  }
+
+  .gallery-photo img {
+    filter: grayscale(1) contrast(1.08) brightness(1.03);
+  }
+
+  .bw-hover-group:hover .gallery-photo::before {
+    opacity: 0.08;
+  }
+
   .bw-hover-group:hover .team-photo .bw-hover {
     filter: none;
     mix-blend-mode: normal;
@@ -271,6 +323,16 @@ h6 {
 @media (hover: hover) and (pointer: fine) {
   .poster-card .bw-hover {
     filter: none;
+  }
+
+  /* Poster cards keep featured posters in color, but embedded gallery tiles should match the main gallery treatment. */
+  .poster-card .gallery-photo .bw-hover {
+    filter: grayscale(1) contrast(1.08) brightness(1.03);
+  }
+
+  .poster-card .bw-hover-group:hover .gallery-photo .bw-hover {
+    filter: grayscale(0);
+    transform: scale(1.03);
   }
 }
 

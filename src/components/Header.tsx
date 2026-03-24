@@ -12,6 +12,7 @@ const Header = () => {
     { name: 'Home', href: '#home' },
     { name: 'Su di noi', href: '#about' },
     { name: 'Spettacoli', href: '#shows' },
+    { name: 'Coppia aperta', href: '#coppia-aperta' },
     { name: 'Team', href: '#team' },
     { name: 'Booking', href: '#booking' },
     { name: 'Gallery', href: '#gallery' },

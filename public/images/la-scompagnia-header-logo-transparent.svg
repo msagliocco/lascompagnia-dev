@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3200" height="900" viewBox="0 0 3200 900">
+  <rect x="100" y="170" width="400" height="400" fill="#15130f"/>
+  <rect x="80" y="150" width="400" height="400" fill="#ff4d2d" stroke="#15130f" stroke-width="20"/>
+  <rect x="380" y="110" width="140" height="140" fill="#f4f1e8" stroke="#15130f" stroke-width="20" transform="rotate(-4 450 180)"/>
+  <text x="640" y="390" font-family="Archivo Black" font-size="240" fill="#15130f">LA SCOMPAGNIA</text>
+</svg>

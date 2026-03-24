@@ -36,7 +36,7 @@ const Home = () => {
         <div className="flex flex-col gap-6 lg:items-start">
           <div className="poster-card">
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-gray-700">
-              Prossimo spettacolo
+              Ultimo spettacolo
             </p>
             <p className="text-2xl font-black uppercase mt-3">
               Coppia aperta<br />
@@ -47,8 +47,8 @@ const Home = () => {
             </p>
           </div>
 
-          <a href="#booking" className="brutal-btn text-lg w-fit">
-            Prenota Ora
+          <a href="#coppia-aperta" className="brutal-btn text-lg w-fit">
+            Vai al Focus
           </a>
         </div>
       </div>

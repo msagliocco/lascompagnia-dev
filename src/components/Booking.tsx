@@ -23,7 +23,7 @@ const Booking = () => {
                   loading="lazy"
                 />
                 <div className="stamp-mark stamp-mini absolute top-4 left-4">
-                  Prossimo Spettacolo
+                  Sold out
                 </div>
               </div>
             </div>
@@ -34,7 +34,7 @@ const Booking = () => {
                   Coppia aperta<br /><span className="text-neon-pink">quasi spalancata</span>
                 </h3>
                 <p className="font-mono text-gray-700 mb-6 uppercase tracking-[0.3em] text-sm border-b-2 border-pitch-black/20 pb-4">
-                  Una commedia di Dario Fo e Franca Rame
+                  Testo di Dario Fo e Franca Rame
                 </p>
 
                 <div className="space-y-4 mb-8 text-sm leading-relaxed text-pitch-black">
@@ -49,10 +49,16 @@ const Booking = () => {
 
                 <div className="note-card mb-8">
                   <h4 className="font-bold uppercase text-pitch-black mb-2">Quando & Dove:</h4>
-                  <p className="font-mono text-sm mb-2 text-pitch-black">
-                    21 Marzo 2026 - ore 20:30<br />
-                    22 Marzo 2026 - ore 19:00
-                  </p>
+                  <div className="space-y-2 font-mono text-sm mb-3 text-pitch-black">
+                    <div className="flex items-center justify-between gap-3 border-b border-dashed border-pitch-black/20 pb-2">
+                      <span>21 Marzo 2026 - ore 20:30</span>
+                      <span className="stamp-mark stamp-mini">Sold out</span>
+                    </div>
+                    <div className="flex items-center justify-between gap-3">
+                      <span>22 Marzo 2026 - ore 19:00</span>
+                      <span className="stamp-mark stamp-mini">Sold out</span>
+                    </div>
+                  </div>
                   <p className="font-mono text-sm text-pitch-black">
                     <strong>Théâtre L'Improviste</strong><br />
                     Rue de Fierlant, 120 - Bruxelles
@@ -64,14 +70,9 @@ const Booking = () => {
                 <p className="text-xs font-mono text-gray-700 mb-4 italic">
                   * Parte del ricavato sarà destinata a sostenere l'Istituto di Ricerca sul Cancro "Gustave Roussy"
                 </p>
-                <a
-                  href="https://www.ticketsource.com/la-scompagnia/una-coppia-aperta-anzi-spalancata/e-rbxdgz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="brutal-btn w-full text-center block text-lg"
-                >
-                  Acquista Biglietti
-                </a>
+                <div className="w-full border-2 border-pitch-black bg-pitch-black text-off-white text-center block text-lg font-mono font-bold uppercase tracking-[0.2em] px-6 py-4">
+                  Biglietti esauriti
+                </div>
               </div>
             </div>
           </div>

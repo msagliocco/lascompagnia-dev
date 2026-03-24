@@ -9,6 +9,7 @@ import Gallery from './components/Gallery';
 import CookieConsent from './components/CookieConsent';
 import OurStory from './components/OurStory';
 import BackgroundOrnaments from './components/BackgroundOrnaments';
+import CoppiaApertaSection from './components/CoppiaApertaSection';
 
 const GA_MEASUREMENT_ID = 'G-9PSDYC1FLV';
 
@@ -60,6 +61,7 @@ function App() {
         <Home />
         <OurStory />
         <Shows />
+        <CoppiaApertaSection />
         <Team />
         <Booking />
         <Gallery

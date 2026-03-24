@@ -137,6 +137,42 @@ const Gallery = ({ canLoadMedia, onEnableMedia }: GalleryProps) => {
       width: 4898,
       height: 3265,
     },
+    {
+      id: 14,
+      thumbBase: 'images/optimized/coppia-aperta-scena-pistola-1',
+      fullBase: 'images/optimized/coppia-aperta-scena-pistola-1',
+      span: 'row-span-2',
+      alt: 'Coppia aperta quasi spalancata - confronto di scena',
+      width: 1850,
+      height: 2469,
+    },
+    {
+      id: 15,
+      thumbBase: 'images/optimized/coppia-aperta-scena-finestra',
+      fullBase: 'images/optimized/coppia-aperta-scena-finestra',
+      span: 'row-span-1',
+      alt: 'Coppia aperta quasi spalancata - scena alla finestra',
+      width: 2278,
+      height: 1708,
+    },
+    {
+      id: 16,
+      thumbBase: 'images/optimized/coppia-aperta-scena-carte',
+      fullBase: 'images/optimized/coppia-aperta-scena-carte',
+      span: 'row-span-1',
+      alt: 'Coppia aperta quasi spalancata - scena con le carte',
+      width: 2055,
+      height: 1541,
+    },
+    {
+      id: 17,
+      thumbBase: 'images/optimized/coppia-aperta-scena-accappatoio',
+      fullBase: 'images/optimized/coppia-aperta-scena-accappatoio',
+      span: 'row-span-2',
+      alt: 'Coppia aperta quasi spalancata - scena in accappatoio',
+      width: 2512,
+      height: 3350,
+    },
   ];
 
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
@@ -156,7 +192,7 @@ const Gallery = ({ canLoadMedia, onEnableMedia }: GalleryProps) => {
               className={`group bw-hover-group relative ${image.span} cursor-pointer hover:shadow-brutal transition-all duration-200`}
               onClick={() => setSelectedImage(image)}
             >
-              <div className="team-photo team-photo--light w-full h-full border-2 border-pitch-black bg-off-white">
+              <div className="gallery-photo w-full h-full border-2 border-pitch-black bg-off-white">
                 <ResponsiveImage
                   srcBase={image.thumbBase}
                   alt={image.alt}
@@ -164,8 +200,8 @@ const Gallery = ({ canLoadMedia, onEnableMedia }: GalleryProps) => {
                   height={image.height}
                   widths={[320, 640, 960]}
                   sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  pictureClassName="absolute inset-0"
-                  className="absolute inset-0 w-full h-full object-cover bw-hover transition-all duration-300"
+                  pictureClassName="absolute inset-0 z-0"
+                  className="absolute inset-0 z-0 w-full h-full object-cover bw-hover transition-all duration-300"
                   loading="lazy"
                 />
               </div>

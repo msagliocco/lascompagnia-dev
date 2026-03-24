@@ -7,22 +7,23 @@ const Shows = () => {
       title: 'Coppia aperta quasi spalancata',
       subtitle: 'Una commedia di Dario Fo e Franca Rame',
       dates: ['21/03/2026', '22/03/2026'],
-      status: 'Prossime repliche 21 e 22 marzo 2026',
+      status: 'Conclusi - Sold out',
       imageBase: 'images/optimized/locandina-coppia-aperta',
       imageWidth: 1131,
       imageHeight: 1600,
       description: [
         'Una coppia sposata affronta le sfide della fedeltà e della libertà in una relazione "aperta". Tra situazioni comiche e momenti di riflessione, lo spettacolo esplora con ironia le dinamiche di coppia.',
         'Un classico del teatro italiano firmato da Dario Fo e Franca Rame, che mette in scena le contraddizioni dell\'amore moderno con intelligenza e umorismo.',
-        'Con Antonella Picarella e Antonio Santangelo. Regia di Antonio Santangelo.',
+        'Le repliche del 21 e 22 marzo 2026 hanno registrato il tutto esaurito. Con Antonella Picarella e Antonio Santangelo. Regia di Antonio Santangelo.',
       ],
+      focusHref: '#coppia-aperta',
     },
     {
       id: 2,
       title: 'Il Dio del Massacro',
       subtitle: "Dall'acclamato testo di Yasmina Reza",
       dates: ['30/11/2024', '01/12/2024', '28/02/2025'],
-      status: 'Conclusi',
+      status: 'Conclusi - Sold out',
       imageBase: 'images/optimized/locandina-dio-massacro',
       imageWidth: 707,
       imageHeight: 1000,
@@ -37,7 +38,7 @@ const Shows = () => {
       title: 'La Tesi di Ernesto',
       subtitle: 'Una commedia brillante e surreale',
       dates: ['08/12/2019'],
-      status: 'Conclusi',
+      status: 'Conclusi - Sold out',
       imageBase: 'images/optimized/locandina-tesi-ernesto',
       imageWidth: 666,
       imageHeight: 1000,
@@ -107,7 +108,12 @@ const Shows = () => {
                     <span className="font-mono text-xs uppercase text-gray-700">
                       STATUS: {show.status}
                     </span>
-                    {show.status.toLowerCase().includes('prossim') && (
+                    {show.focusHref && (
+                      <a href={show.focusHref} className="brutal-btn brutal-btn-sm">
+                        Focus
+                      </a>
+                    )}
+                    {!show.focusHref && show.status.toLowerCase().includes('prossim') && (
                       <a href="#booking" className="brutal-btn brutal-btn-sm">
                         PRENOTA
                       </a>

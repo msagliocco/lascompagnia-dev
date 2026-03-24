@@ -125,6 +125,31 @@ const tasks = [
     base: 'gallery-80002972',
     widths: [320, 640, 960, 1440],
   },
+  {
+    input: 'public/images/coppia-aperta-quasi-spalancata/coppia-aperta-scena-pistola-1.jpg',
+    base: 'coppia-aperta-scena-pistola-1',
+    widths: [320, 640, 960, 1440, 2000],
+  },
+  {
+    input: 'public/images/coppia-aperta-quasi-spalancata/coppia-aperta-scena-pistola-2.jpg',
+    base: 'coppia-aperta-scena-pistola-2',
+    widths: [320, 640, 960, 1440, 2000],
+  },
+  {
+    input: 'public/images/coppia-aperta-quasi-spalancata/coppia-aperta-scena-finestra.jpg',
+    base: 'coppia-aperta-scena-finestra',
+    widths: [320, 640, 960, 1440, 2000],
+  },
+  {
+    input: 'public/images/coppia-aperta-quasi-spalancata/coppia-aperta-scena-carte.jpg',
+    base: 'coppia-aperta-scena-carte',
+    widths: [320, 640, 960, 1440, 2000],
+  },
+  {
+    input: 'public/images/coppia-aperta-quasi-spalancata/coppia-aperta-scena-accappatoio.jpg',
+    base: 'coppia-aperta-scena-accappatoio',
+    widths: [320, 640, 960, 1440, 2000],
+  },
 ];
 
 const ensureOutputDir = async () => {
